@@ -1,0 +1,44 @@
+{% extends 'oorja/base.html' %}
+
+
+{% load static %}
+
+{% block content %} 
+
+	 <div class="featured">
+          <img src="{% static 'oorja/images/hero.png' %}" alt="" class="hero">	
+             	
+     </div>
+     <div class = "event_tag_line">
+             <p id="head_name">Events</p>
+     </div>
+
+{% for event in Events %}
+    <div class="event">
+            <div class="flex">
+                    <pre id="reg_date">
+                        Registraion Starts 
+                        11:10 PM
+                        {{event.eventRegDate}}
+                    </pre>
+                    <pre id="event_date">
+                        Event Date
+                        11:10 PM
+                        {{event.eventDate}}
+                    </pre>
+                    <img src="{% static 'oorja/event_images/'%}{{event.flex_set.reverse.0}}" alt="" width="720" height="960" class="flex_img"/> 
+            </div>
+    </div>
+            
+    <div class="details">
+                <p id="details">
+                    {{event.eventContent}}
+                </p>
+                
+    </div>
+
+{% endfor %}
+
+
+        
+{% endblock %}

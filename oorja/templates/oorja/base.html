@@ -1,0 +1,63 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Oorja The Electrical Society</title>
+	<link rel="stylesheet" href="{% static 'oorja/css/style.css' %}" type="text/css">
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="css/ie7.css" type="text/css">
+        
+        
+           
+        
+	<![endif]-->
+    <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.--><script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/fredericka-the-great:n4:default.js" type="text/javascript"></script>
+<script src="{% static 'oorja/js/index.js' %}"></script>    
+<div class="header">
+		<div class="nav_bar">
+			<a href="{% url 'oorja:Index' %}" id="logo">Oorja:The Electrical Society</a>
+			<ul style = "z-index : 2;">
+				<li style = "z-index : 2;">
+					<a href="{% url 'oorja:Index' %}">Home</a>
+				</li>
+				<li style = "z-index : 2;">
+					<a href="{% url 'oorja:Events' %}">Events</a>
+				</li>
+				<li style = "z-index : 2;">
+					<a href="/oorja/Gallery/1000000">Gallery</a>
+				</li>
+				<li style = "z-index : 2;">
+					<a href="{% url 'oorja:Blogs' %}">Blog</a>
+				</li>
+
+			</ul>
+		</div>
+</div>   
+		
+</head>
+<body>
+{% if messages %}
+    <div id="message">
+{% for message in messages %}
+   <h3> {{ message }}</h3>
+{% endfor %}
+    </div>
+{% endif %}
+
+
+
+{% block content %}
+
+{% endblock %}
+
+        <div class="footer">
+          <div class = "social"><p>Facebook</p></div>
+          <p>Developed by : Kunal Rajput & Teg Khanna</p>
+        	<p id="copyrights">copyrights reserved</p>
+        </div> 
+        
+</body>
+</html>

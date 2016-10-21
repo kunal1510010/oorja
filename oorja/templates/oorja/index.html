@@ -1,0 +1,39 @@
+{% extends 'oorja/base.html' %}
+
+
+{% load static %}
+
+{% block content %} 
+ 
+        <div class="featured">
+          <img src="{% static 'oorja/images/hero.png' %}" alt="" class="hero"> 
+           <div class = "tag_line">
+             <p id="tag_line2">Exploring</p>
+             <p id="tag_line3">New</p>
+             <p id="tag_line">Infinities</p>
+           </div>   
+        </div>
+        <div class="intro">
+                   <p class="intro">"There are painters who transform the sun to a yellow spot but there are others who with the help of their art and their intelligence transform a yellow spot into sun."
+                    - Pablo Picasso </p>
+      <p class="intro">
+      Creativity has the power to convert the simplest of things into something magical. 
+      It is through the exquisiteness of Creativity that the horizons of human mind reach new epitome and new infinities are conquered. Technology, when complimented with creativity, has the ability to yield the greatest of inventions and innovations—an idea, a theory, a product or a philosophy. It signifies the potential to find hidden patterns in the Universe, to make new connections between seemingly unrelated phenomenon and to generate solutions. So turn on the light of innovation in your brain and use the brightness to make the world shine.
+
+                     </p>
+        </div>
+        <div class="intro">
+         <img src="{% static 'oorja/images/tech-solutions.png' %}" alt="" width="531" height="168" class="tech"/>
+         <p class="intro">The World as we know it today is the golden age of Technology. We witness its splendor every day in our daily lives. And the Technical Domain at Team Oorja decodes this splendor, fits it into a scientific framework, and puts it forth to the students to imbibe and learn from. Indeed, the Technical Domain at Team Oorja perspires and inspires! </p>
+     </div>
+        <div class="intro">
+          
+        <img src="{% static 'oorja/images/cs6-splash1.png' %}" alt="" width="1699" height="637" class="design"/>
+        <p class="intro">A well-crafted design has the power to drive home a message or evoke a response. It helps you speak to your prospects in a memorable way and it stands the best chance of getting your campaign noticed. It acts as an interface between the plan and its successful execution. Likewise, the Designing Domain ensures that Team Oorja reaches out successfully to the students of AKGEC in its every endeavour. </p>
+        </div>
+     
+        <div class="team_home">
+            <img src="{% static 'oorja/images/team_home.jpg' %}" alt="" width="1296" height="864" class="img_home"/> </div>
+     
+		 
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'oorja/base.html' %}
+
+
+{% load static %}
+
+{% block content %} 
+
+
+	<div class="body" >
+		<div class="blog"">
+			<div>
+				{% for blog in Blogs %}
+					<div>
+						<div>
+							<span>{{blog.pubDate}}</span>
+							<h3><a href="#">{{blog.title}}</a></h3>
+						</div>
+						<div>
+							<img src="{% static 'oorja/blog_images/'%}{{blog.blogimages_set.reverse.0}}" alt="" style = "width:70%;height:0%;">
+							<p>
+								{{blog.content}}
+							</p>
+							{% if blog.link and blog.link.strip %}
+							<a id = "goto" href="{{blog.link}}" style="text-decoration:none;">READ MORE...</a>
+							{% endif %}
+						</div>
+					</div>
+				{% endfor %}
+				
+			</div>
+			<div>
+				
+			</div>
+		</div>
+	</div>
+	{% endblock %}
