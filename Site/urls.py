@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import login
 
 urlpatterns = [
-	url(r'^oorja/', include('oorja.urls')),
+	url(r'^', include('oorja.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',login,{'template_name': 'registration/login.html'}),
 ]

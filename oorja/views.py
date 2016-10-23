@@ -19,14 +19,17 @@ from .forms import *
 class GalleryView(generic.TemplateView):
 	template_name = 'oorja/collections.html'
 	def get(self, request, e_id,*args, **kwargs):
-		today = datetime.today()
-		last_five = Events.objects.filter(eventDate__lte = today).order_by('-eventDate')[:5]
-		if int(e_id) == 1000000:
-			return HttpResponseRedirect("/oorja/Gallery/" + str(last_five[0].id))
-		else:
-			images = Events.objects.get(pk=int(e_id)).images_set.all()
-		context = {'Events':last_five, 'Images':images}
-		return render(request, self.template_name, context)
+		try:
+			today = datetime.today()
+			last_five = Events.objects.filter(eventDate__lte = today).order_by('-eventDate')[:5]
+			if int(e_id) == 1000000:
+				return HttpResponseRedirect("/Gallery/" + str(last_five[0].id))
+			else:
+				images = Events.objects.get(pk=int(e_id)).images_set.all()
+			context = {'Events':last_five, 'Images':images}
+			return render(request, self.template_name, context)
+		except:
+			return HttpResponseRedirect("/" )
 
 
 
